@@ -14,15 +14,15 @@
             min-height: 100vh;
             margin: 0;
             color: #333;
-            background-image: url("bg.jpg"); /* Set the background image - MAKE SURE THIS PATH IS CORRECT */
-            background-size: auto 100%; /* Maintain aspect ratio and fit to height */
-            background-position: right center; /* Align to the right and center vertically */
-            background-repeat: no-repeat; /* Prevent image tiling */
+            background-image: url("bg.jpg");
+            background-size: auto 100%;
+            background-position: right center;
+            background-repeat: no-repeat;
         }
 
         .container {
             text-align: center;
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for the content */
+            background-color: rgba(255, 255, 255, 0.8);
             padding: 40px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -31,6 +31,12 @@
         h1 {
             color: #151515;
             margin-bottom: 20px;
+        }
+
+        h4 {
+            color: #333;  /* Added styling for h4 */
+            margin-bottom: 10px; /* Added some margin */
+
         }
 
         p {
@@ -53,6 +59,7 @@
             border-radius: 5px;
             overflow: hidden;
             margin-top: 20px;
+            display: none; /* Initially hidden */
         }
 
         .progress-bar {
@@ -60,7 +67,7 @@
             height: 20px;
             background-color: #a19e79;
             border-radius: 5px;
-            animation: progress 2s linear forwards;
+            animation: progress 3s linear forwards; /* slightly longer animation */
         }
 
         @keyframes progress {
@@ -70,9 +77,27 @@
     </style>
     <script>
         window.onload = function() {
-            setTimeout(function() {
-                window.location.href = "https://drive.google.com/file/d/1Wp1banj8VIdIWTAnjT9qrR1A2PzIzGCX/view?usp=sharing";
-            }, 3000);
+            const bgImage = new Image();
+            bgImage.src = "bg.jpg";
+
+            bgImage.onload = function() {
+                const progressBar = document.querySelector('.progress');
+                progressBar.style.display = 'block'; // Show the progress bar
+
+                setTimeout(function() {
+                    window.location.href = "https://drive.google.com/file/d/1Wp1banj8VIdIWTAnjT9qrR1A2PzIzGCX/view?usp=sharing";
+                }, 3000); // Match the animation duration
+            };
+
+            // Handle image loading errors (optional):
+            bgImage.onerror = function() {
+                console.error("Error loading background image.");
+                // You might want to display a message to the user or use a fallback image here.
+                // Even with an error, you might still want to redirect after a delay:
+                setTimeout(function() {
+                    window.location.href = "https://drive.google.com/file/d/1Wp1banj8VIdIWTAnjT9qrR1A2PzIzGCX/view?usp=sharing";
+                }, 3000);
+            };
         };
     </script>
 </head>
