@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jia Maria | Portfolio</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #333;
+            background-image: url("bg.jpg"); /* Set the background image - MAKE SURE THIS PATH IS CORRECT */
+            background-size: auto 100%; /* Maintain aspect ratio and fit to height */
+            background-position: right center; /* Align to the right and center vertically */
+            background-repeat: no-repeat; /* Prevent image tiling */
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for the content */
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #151515;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        a {
+            color: #004996;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .progress {
+            width: 100%;
+            background-color: #897857;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 20px;
+            background-color: #a19e79;
+            border-radius: 5px;
+            animation: progress 2s linear forwards;
+        }
+
+        @keyframes progress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                window.location.href = "https://drive.google.com/file/d/1Wp1banj8VIdIWTAnjT9qrR1A2PzIzGCX/view?usp=sharing";
+            }, 3000);
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>“ When I have a camera in my hand, I know no fear ”</h1>
+        <h4>– Alfred Eisenstaedt</h4>
+        <p>Please wait while the portfolio is loaded.</p>
+        <div class="progress">
+            <div class="progress-bar"></div>
+        </div>
+        <noscript>
+            <p><a href="https://drive.google.com/file/d/1Wp1banj8VIdIWTAnjT9qrR1A2PzIzGCX/view?usp=sharing">Click here if you are not redirected.</a></p>
+        </noscript>
+    </div>
+</body>
+</html>
